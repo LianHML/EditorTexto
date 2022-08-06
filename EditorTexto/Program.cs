@@ -35,7 +35,19 @@ namespace EditorTexto
 
         static void Abrir()         
         {
-        
+            Console.Clear();
+            Console.WriteLine("Abrir arquivo de Texto");
+            Console.WriteLine("");
+            Console.WriteLine("Qual o Caminho do arquivo?: ");
+            Console.WriteLine("");
+            string caminho = Console.ReadLine();
+
+            string arquivoAberto = File.ReadAllText(caminho);
+            Console.WriteLine(arquivoAberto);
+
+            Console.WriteLine("");
+            Console.ReadLine();
+            Menu();
         }
 
         static void Editar() 
@@ -77,7 +89,7 @@ namespace EditorTexto
         {
             Console.Clear();
             Console.WriteLine("Obrigado! Volte Sempre.");
-            Thread.Sleep(2500);
+            Thread.Sleep(2000);
             Environment.Exit(0);
         }
     }
