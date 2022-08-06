@@ -39,7 +39,10 @@ namespace EditorTexto
         }
         static void Sair()
         {
-
+            Console.Clear();
+            Console.WriteLine("Obrigado! Volte Sempre.");
+            Thread.Sleep(2500);
+            Environment.Exit(0);
         }
 
     }
