@@ -81,7 +81,7 @@ namespace EditorTexto
             File.WriteAllText(caminho, textoEditado);
 
             Console.WriteLine($"Arquivo {caminho} Salvo com sucesso!");
-            Thread.Sleep(2500);
+            Thread.Sleep(2000);
             Menu();
         }
 
