@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading;
 
 namespace EditorTexto
@@ -9,6 +10,7 @@ namespace EditorTexto
         {
             Menu();
         }
+
         static void Menu()
         {
             Console.Clear();
@@ -35,6 +37,7 @@ namespace EditorTexto
         {
         
         }
+
         static void Editar() 
         {
             Console.Clear();
@@ -52,7 +55,24 @@ namespace EditorTexto
                 textoDigitado += Environment.NewLine;
             }
             while (Console.ReadKey().Key != ConsoleKey.Escape);
+
+            Salvar(textoDigitado);
         }
+
+        static void Salvar(string textoEditado)
+        {
+            Console.Clear();
+            Console.WriteLine(" Onde deseja salvar o arquivo?: ");
+            Console.WriteLine("");
+            var caminho = Console.ReadLine();
+
+            File.WriteAllText(caminho, textoEditado);
+
+            Console.WriteLine($"Arquivo {caminho} Salvo com sucesso!");
+            Thread.Sleep(2500);
+            Menu();
+        }
+
         static void Sair()
         {
             Console.Clear();
