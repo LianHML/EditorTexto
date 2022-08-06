@@ -19,6 +19,7 @@ namespace EditorTexto
             Console.WriteLine("1 - Abrir Arquivo");
             Console.WriteLine("2 - Criar Novo Arquivo");        
             Console.WriteLine("0 - Sair");
+            Console.WriteLine("");
             short opcaoSelecionada = short.Parse(Console.ReadLine());
 
             switch(opcaoSelecionada)
@@ -26,6 +27,7 @@ namespace EditorTexto
                 case 0: Sair(); break;
                 case 1: Abrir(); break;
                 case 2: Editar(); break;
+                default : Menu(); break;
             }
         }
 
@@ -35,7 +37,21 @@ namespace EditorTexto
         }
         static void Editar() 
         {
+            Console.Clear();
+            Console.WriteLine("Criação de Texto");
+            Console.WriteLine("");
+            Console.WriteLine("Pressione ESC para Sair");
+            Console.WriteLine("");
+            Console.WriteLine("Digite seu texto abaixo: ");
+            Console.WriteLine("");
+            string textoDigitado = "";
 
+            do
+            {
+                textoDigitado += Console.ReadLine();
+                textoDigitado += Environment.NewLine;
+            }
+            while (Console.ReadKey().Key != ConsoleKey.Escape);
         }
         static void Sair()
         {
@@ -44,7 +60,5 @@ namespace EditorTexto
             Thread.Sleep(2500);
             Environment.Exit(0);
         }
-
     }
-
 }
